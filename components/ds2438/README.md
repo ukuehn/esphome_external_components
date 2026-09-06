@@ -65,7 +65,7 @@ sensor:
 
 - **vsense** (*Optional*): Specify the use of the current sensing ADC to measure the vaoltage difference of the vsense+ and vsense- pins. Output is the voltage in milli-Volt (mV).
 
-- All other options from Sensor (as yet largely untested).
+- All other options from [Sensor](https://esphome.io/components/sensor/).
 
 
 
