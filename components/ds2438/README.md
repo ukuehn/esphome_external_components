@@ -6,14 +6,13 @@ This external component provides support for the Dallas DS2438 smart
 battery monitor device. It communicates via 1-wire bus and allows to
 measure volatages (external or supply) resp. voltage over a sense
 resistor for current measurements, thus a 1-wire bus is required to be
-set up in the configuration. For details on the device see the data
-sheet at
-https://www.analog.com/media/en/technical-documentation/data-sheets/DS2438.pdf
+set up in the configuration. For details on the device see the [data
+sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/DS2438.pdf).
 
 ## Configuration
 
-The DS2438 requires a 1-wire bus for communication. The example uses
-one based on a GPIO.
+The DS2438 requires a [1-wire bus](https://esphome.io/components/one_wire/)
+for communication. The example uses one based on a GPIO.
 
 
 ```yaml
@@ -123,7 +122,7 @@ sensor:
               float temp = id(ce_temp).state;
               float hum = ((vad/vdd)-0.1515)/0.00636;
               float humcomp = hum/(1.0546-0.00216*temp);
-              id(hum_balcony).publish_state(humcomp);
+              id(hum).publish_state(humcomp);
               ESP_LOGD("ds2438", "humidity >> %.0f", humcomp);
 
   - platform: template
